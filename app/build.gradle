@@ -50,7 +50,7 @@ dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 
     //***** required start ****//
-    implementation 'com.tuya.smart:panel-sdk:0.4.0'
+    implementation 'com.tuya.smart:panel-sdk:0.4.2'
     implementation "com.tuya.smart:tuyasmart-TuyaRNApi:5.22.54-open"
 
     implementation 'com.tuya.smart:tuyasmart:3.13.0'
