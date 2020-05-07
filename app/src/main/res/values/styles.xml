@@ -3,63 +3,11 @@
     <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.AppCompat.NoActionBar">
         <!-- Customize your theme here. -->
-        <item name="colorPrimary">@color/colorPrimary</item>
-        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
-        <item name="colorAccent">@color/colorAccent</item>
-        <item name="android:windowBackground">@color/window_bg</item>
-        <item name="android:actionMenuTextColor">@color/window_bg</item>
+        <item name="colorPrimary">#FF5800</item>
+        <item name="colorPrimaryDark">#e54000</item>
+        <item name="colorAccent">#9b9b9b</item>
+        <item name="android:windowBackground">@color/white</item>
+        <item name="android:actionMenuTextColor">@color/white</item>
     </style>
 
-    <style name="SplashTheme" parent="AppTheme">
-        <item name="android:windowBackground">@drawable/ty_pre</item>
-    </style>
-
-    <style name="edit_text_input">
-        <item name="android:layout_width">match_parent</item>
-        <item name="android:layout_height">@dimen/edit_height</item>
-        <item name="android:background">@null</item>
-        <item name="android:paddingRight">10dp</item>
-        <item name="android:gravity">center_vertical</item>
-        <item name="android:textCursorDrawable">@null</item>
-        <item name="android:textSize">15sp</item>
-        <item name="android:singleLine">true</item>
-        <item name="android:textColorHint">?attr/list_secondary_color</item>
-        <item name="android:textColor">?attr/list_primary_color</item>
-    </style>
-
-    <style name="TY_SingleLine_Normal">
-        <item name="android:layout_height">1px</item>
-        <item name="android:layout_width">match_parent</item>
-        <item name="android:background">@color/line_color</item>
-    </style>
-    <!-- 普通的文本按钮 -->
-    <style name="Button.Normal" parent="android:Widget.Button">
-        <item name="android:layout_height">@dimen/wh_36</item>
-        <item name="android:minWidth">@dimen/wh_88</item>
-        <item name="android:layout_width">wrap_content</item>
-        <item name="android:singleLine">true</item>
-        <item name="android:textSize">@dimen/ts_18</item>
-        <item name="android:textStyle">normal</item>
-        <item name="android:ellipsize">end</item>
-        <item name="android:background">@drawable/button_orange</item>
-        <item name="android:textColor">@color/button_orange_text</item>
-    </style>
-
-    <style name="TY.Progress.Dialog" parent="Theme.AppCompat.Dialog">
-        <item name="colorAccent">@color/color_accent</item>
-        <item name="android:lineSpacingExtra">@dimen/wh_4</item>
-    </style>
-
-    <!-- listview有分割线 -->
-    <style name="TY_List_Normal">
-        <item name="android:fadingEdge">none</item>
-        <item name="android:listSelector">@android:color/transparent</item>
-        <item name="android:divider">@color/line_color</item>
-        <item name="android:dividerHeight">@dimen/single_pix</item>
-        <item name="android:listDivider">@drawable/ty_color_line</item>
-        <item name="android:footerDividersEnabled">false</item>
-        <item name="android:cacheColorHint">@android:color/transparent</item>
-        <item name="android:scrollbarThumbVertical">@drawable/ty_scrollbar_thumb</item>
-        <item name="android:scrollbarTrackVertical">@null</item>
-    </style>
 </resources>
