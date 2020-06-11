@@ -11,6 +11,8 @@ import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.widget.Toast;
 
+import com.tuya.panelsdkdemo.base.utils.LoginHelper;
+import com.tuya.panelsdkdemo.base.utils.ToastUtil;
 import com.tuya.panelsdkdemo.bean.ItemBean;
 import com.tuya.sdk.panel.base.presenter.TuyaPanel;
 import com.tuya.smart.android.panel.TuyaPanelSDK;
@@ -19,7 +21,6 @@ import com.tuya.smart.android.panel.api.ITuyaPanelLoadCallback;
 import com.tuya.smart.android.panel.api.ITuyaPressedRightMenuListener;
 import com.tuya.smart.android.panel.utils.ProgressUtil;
 import com.tuya.smart.android.user.api.ILogoutCallback;
-import com.tuya.smart.demo_login.base.utils.LoginHelper;
 import com.tuya.smart.home.sdk.TuyaHomeSdk;
 import com.tuya.smart.home.sdk.api.ITuyaHomeChangeListener;
 import com.tuya.smart.home.sdk.bean.HomeBean;
@@ -27,7 +28,6 @@ import com.tuya.smart.home.sdk.callback.ITuyaGetHomeListCallback;
 import com.tuya.smart.home.sdk.callback.ITuyaHomeResultCallback;
 import com.tuya.smart.sdk.bean.DeviceBean;
 import com.tuya.smart.sdk.bean.GroupBean;
-import com.tuya.smart.utils.ToastUtil;
 
 import java.util.ArrayList;
 import java.util.List;

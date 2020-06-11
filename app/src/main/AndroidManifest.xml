@@ -15,12 +15,23 @@
         tools:ignore="GoogleAppIndexingWarning"
         tools:targetApi="n">
 
-        <activity android:name=".MainActivity">
+        <activity
+            android:name=".base.activity.SplashActivity"
+            android:theme="@style/SplashTheme">
+
             <intent-filter>
-                <category android:name="android.intent.category.DEFAULT" />
-                <action android:name="tuyasmart_demo_main" />
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <activity android:name=".MainActivity" />
+        <activity android:name=".login.activity.LoginActivity" />
+        <activity android:name=".login.activity.LoginWithPhoneActivity" />
+        <activity android:name=".login.activity.AccountInputActivity" />
+        <activity android:name=".login.activity.AccountConfirmActivity" />
+        <activity android:name=".login.activity.CountryListActivity" />
     </application>
 
 </manifest>

@@ -10,7 +10,7 @@
         android:id="@+id/toolbar_main"
         android:layout_width="match_parent"
         android:layout_height="?android:actionBarSize"
-        android:background="#FF5800"
+        android:background="@color/colorPrimary"
         app:layout_constraintTop_toTopOf="parent" />
 
     <android.support.v7.widget.RecyclerView
