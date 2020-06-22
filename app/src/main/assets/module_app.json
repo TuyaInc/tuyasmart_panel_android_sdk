@@ -1,0 +1,55 @@
+{
+  "pipeLine": {
+    "PIPE_LINE_TAB_LAUNCHER_STARTED": [],
+    "PIPE_LINE_APPLICATION_SYNC": [],
+    "PIPE_LINE_APPLICATION_ASYNC": []
+  },
+  "moduleMap": {
+    "com.tuya.smart.panel.base.PanelModuleApp": [
+      "addAlarm",
+      "alarm",
+      "newAlarm"
+    ],
+    "com.tuya.smart.camera.router.CameraApp": [
+      "camera_panel_2",
+      "camera_message_panel",
+      "camera_cloud_panel",
+      "doorbell_camera_playback_panel",
+      "camera_panel_more",
+      "camera_door_bell",
+      "doorbell_camera_panel",
+      "camera_local_video_photo",
+      "camera_action_doorbell",
+      "camera_motion_monitor",
+      "camera_playback_panel",
+      "camera_preset_point"
+    ],
+    "com.tuya.smart.ipc.UIVideoModuleApp": [
+      "camera_video_view"
+    ],
+    "com.tuya.smart.jsbridge.HyBridBrowserApp": [
+      "hybrid_browser",
+      "tuyaweb"
+    ],
+    "com.tuya.smart.VideoApp": [
+      "video_or_pic"
+    ]
+  },
+  "serviceMap": {
+    "com.tuya.smart.mesh.BlueMeshService": "com.tuya.smart.bluemesh.BlueMeshServiceImpl",
+    "com.tuya.smart.api.service.H5Service": "com.tuya.smart.jsbridge.router.H5ServerImpl",
+    "com.tuya.smart.camera.rctpackage.caller.api.CameraRCTPackageCallerService": "com.tuya.smart.camera.rctpackage.caller.CameraRCTPackageCallerServiceImpl"
+  },
+  "eventMap": {
+    "global_user_event": [
+      {
+        "name": "com.tuya.smart.ipc.UIVideoModuleApp",
+        "thread": false
+      },
+      {
+        "name": "com.tuya.smart.jsbridge.HyBridBrowserApp",
+        "thread": false
+      }
+    ]
+  }
+}
