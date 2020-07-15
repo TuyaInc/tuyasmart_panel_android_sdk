@@ -14,6 +14,8 @@ import com.tuya.smart.android.panel.TuyaPanelSDK;
 import com.tuya.smart.android.panel.api.ITuyaPanelLoadCallback;
 import com.tuya.smart.android.panel.api.ITuyaPressedRightMenuListener;
 import com.tuya.smart.android.user.api.ILogoutCallback;
+import com.tuya.smart.api.service.MicroServiceManager;
+import com.tuya.smart.commonbiz.bizbundle.family.api.AbsBizBundleFamilyService;
 import com.tuya.smart.demo_login.base.utils.LoginHelper;
 import com.tuya.smart.home.sdk.TuyaHomeSdk;
 import com.tuya.smart.home.sdk.api.ITuyaHomeChangeListener;
@@ -30,7 +32,6 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
-    private long mCurrentHomeId;
     private HomeAdapter mAdapter;
     private ITuyaHomeChangeListener mHomeChangeListener = new ITuyaHomeChangeListener() {
         @Override
@@ -138,10 +139,10 @@ public class MainActivity extends AppCompatActivity {
             public void onItemClick(final ItemBean bean, int position) {
                 if (bean.getGroupId() > 0) {
                     //  group panel
-                    TuyaPanelSDK.getPanelInstance().gotoPanelViewControllerWithGroup(TuyaPanelSDK.getCurrentActivity(), mCurrentHomeId, bean.getGroupId(), mLoadCallback);
+                    TuyaPanelSDK.getPanelInstance().gotoPanelViewControllerWithGroup(TuyaPanelSDK.getCurrentActivity(), getService().getCurrentHomeId(), bean.getGroupId(), mLoadCallback);
                 } else {
                     //  device panel
-                    TuyaPanelSDK.getPanelInstance().gotoPanelViewControllerWithDevice(TuyaPanelSDK.getCurrentActivity(), mCurrentHomeId, bean.getDevId(), mLoadCallback);
+                    TuyaPanelSDK.getPanelInstance().gotoPanelViewControllerWithDevice(TuyaPanelSDK.getCurrentActivity(), getService().getCurrentHomeId(), bean.getDevId(), mLoadCallback);
                 }
             }
         });
@@ -153,6 +154,15 @@ public class MainActivity extends AppCompatActivity {
                 Toast.makeText(TuyaPanelSDK.getCurrentActivity(), "panelMore", Toast.LENGTH_SHORT).show();
             }
         });
+    }
+
+    /**
+     * you must implementation AbsBizBundleFamilyService
+     *
+     * @return AbsBizBundleFamilyService
+     */
+    private AbsBizBundleFamilyService getService() {
+        return MicroServiceManager.getInstance().findServiceByInterface(AbsBizBundleFamilyService.class.getName());
     }
 
     @Override
@@ -170,7 +180,7 @@ public class MainActivity extends AppCompatActivity {
             public void onSuccess(List<HomeBean> list) {
                 if (!list.isEmpty()) {
                     HomeBean homeBean = list.get(0);
-                    mCurrentHomeId = homeBean.getHomeId();
+                    setCurrentHomeId(homeBean);
                     getCurrentHomeDetail();
                 } else {
                     ToastUtil.showToast(MainActivity.this, "家庭列表为空,请创建家庭");
@@ -186,8 +196,16 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
+    /**
+     * you must invoke this method
+     * @param homeBean current family homeBean
+     */
+    private void setCurrentHomeId(HomeBean homeBean) {
+        getService().setCurrentHomeId(homeBean.getHomeId());
+    }
+
     private void getCurrentHomeDetail() {
-        TuyaHomeSdk.newHomeInstance(mCurrentHomeId).getHomeDetail(new ITuyaHomeResultCallback() {
+        TuyaHomeSdk.newHomeInstance(getService().getCurrentHomeId()).getHomeDetail(new ITuyaHomeResultCallback() {
             @Override
             public void onSuccess(HomeBean homeBean) {
                 List<ItemBean> beans = new ArrayList<>(8);

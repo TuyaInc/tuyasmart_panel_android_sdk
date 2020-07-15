@@ -33,12 +33,28 @@
     ],
     "com.tuya.smart.VideoApp": [
       "video_or_pic"
+    ],
+    "com.tuya.smart.scene.SceneApp": [
+      "sceneAction",
+      "createScene",
+      "createScene_allDevices",
+      "editScene",
+      "editSmartScene",
+      "createSmartScene",
+      "createAuto",
+      "createAutoWithCondition",
+      "devManualAndSmart",
+      "createRNSceneTask",
+      "houseScene"
     ]
   },
   "serviceMap": {
     "com.tuya.smart.mesh.BlueMeshService": "com.tuya.smart.bluemesh.BlueMeshServiceImpl",
     "com.tuya.smart.api.service.H5Service": "com.tuya.smart.jsbridge.router.H5ServerImpl",
-    "com.tuya.smart.camera.rctpackage.caller.api.CameraRCTPackageCallerService": "com.tuya.smart.camera.rctpackage.caller.CameraRCTPackageCallerServiceImpl"
+    "com.tuya.smart.camera.rctpackage.caller.api.CameraRCTPackageCallerService": "com.tuya.smart.camera.rctpackage.caller.CameraRCTPackageCallerServiceImpl",
+    "com.tuya.smart.scene.api.SceneDataService": "com.tuya.smart.scene.SceneDataServiceImpl",
+    "com.tuya.smart.scene.business.api.ITuyaSceneBusinessService": "com.tuya.smart.scene.TuyaSceneBusinessManager",
+    "com.tuya.smart.commonbiz.api.family.AbsFamilyService": "com.tuya.smart.commonbiz.family.outside.FamilyService"
   },
   "eventMap": {
     "global_user_event": [

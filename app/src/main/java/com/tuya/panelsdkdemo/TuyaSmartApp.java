@@ -9,6 +9,7 @@ import android.widget.Toast;
 import com.tuya.smart.android.panel.TuyaPanelSDK;
 import com.tuya.smart.api.router.UrlBuilder;
 import com.tuya.smart.api.service.RouteEventListener;
+import com.tuya.smart.commonbiz.bizbundle.family.api.AbsBizBundleFamilyService;
 import com.tuya.smart.home.sdk.TuyaHomeSdk;
 import com.tuya.smart.utils.ToastUtil;
 import com.tuya.smart.wrapper.api.TuyaWrapper;
@@ -21,6 +22,9 @@ public class TuyaSmartApp extends Application {
         if (TextUtils.isEmpty(BuildConfig.TUYA_SMART_APPKEY) || TextUtils.isEmpty(BuildConfig.TUYA_SMART_SECRET)) {
             Toast.makeText(this, "appkey or appsecret is empty. \nPlease check your configuration", Toast.LENGTH_LONG).show();
         }
+        //sdk init
+        TuyaHomeSdk.setDebugMode(BuildConfig.DEBUG);
+        TuyaPanelSDK.init(this, BuildConfig.TUYA_SMART_APPKEY, BuildConfig.TUYA_SMART_SECRET);
         // fail router listener
         TuyaWrapper.init(this, new RouteEventListener() {
             @Override
@@ -28,9 +32,8 @@ public class TuyaSmartApp extends Application {
                 ToastUtil.shortToast(TuyaPanelSDK.getCurrentActivity(), urlBuilder.originUrl);
             }
         });
-        TuyaHomeSdk.setDebugMode(BuildConfig.DEBUG);
-        // init
-        TuyaPanelSDK.init(this, BuildConfig.TUYA_SMART_APPKEY, BuildConfig.TUYA_SMART_SECRET);
+        // set current Home id
+        TuyaWrapper.registerService(AbsBizBundleFamilyService.class, new BizBundleFamilyServiceImpl());
     }
 
     @Override
