@@ -51,7 +51,7 @@ dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 
     //***** required start ****//
-    implementation 'com.tuya.smart:panel-sdk:0.5.1'
+    implementation 'com.tuya.smart:panel-sdk:0.5.2'
 
     implementation 'com.tuya.smart:tuyasmart:3.17.0'
     implementation 'com.squareup.okhttp3:okhttp-urlconnection:3.12.3'
