@@ -8,7 +8,8 @@
     "com.tuya.smart.panel.base.PanelModuleApp": [
       "addAlarm",
       "alarm",
-      "newAlarm"
+      "newAlarm",
+      "panelAction"
     ],
     "com.tuya.smart.camera.router.CameraApp": [
       "camera_panel_2",
