@@ -6,6 +6,7 @@
 
 0.6.0
 
+
 # TuyaSmart Android Device Control BizBundle
 
 [Doc](https://tuyainc.github.io/tuyasmart_bizbundle_android_doc/)
