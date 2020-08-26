@@ -150,8 +150,8 @@ public class MainActivity extends AppCompatActivity {
         //get the panel toolbar right menu listener
         TuyaPanelSDK.getPanelInstance().setPressedRightMenuListener(new ITuyaPressedRightMenuListener() {
             @Override
-            public void onPressedRightMenu(String deviceId) {
-                Toast.makeText(TuyaPanelSDK.getCurrentActivity(), "panelMore", Toast.LENGTH_SHORT).show();
+            public void onPressedRightMenu(String s, long groupId) {
+                Toast.makeText(TuyaPanelSDK.getCurrentActivity(), s + " " + groupId, Toast.LENGTH_SHORT).show();
             }
         });
     }
@@ -198,6 +198,7 @@ public class MainActivity extends AppCompatActivity {
 
     /**
      * you must invoke this method
+     *
      * @param homeBean current family homeBean
      */
     private void setCurrentHomeId(HomeBean homeBean) {
