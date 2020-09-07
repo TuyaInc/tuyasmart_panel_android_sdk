@@ -4,6 +4,7 @@ import android.app.Application;
 import android.content.Context;
 import android.support.multidex.MultiDex;
 import android.text.TextUtils;
+import android.util.Log;
 import android.widget.Toast;
 
 import com.tuya.smart.android.panel.TuyaPanelSDK;
@@ -29,7 +30,7 @@ public class TuyaSmartApp extends Application {
         TuyaWrapper.init(this, new RouteEventListener() {
             @Override
             public void onFaild(int errorCode, UrlBuilder urlBuilder) {
-                ToastUtil.shortToast(TuyaPanelSDK.getCurrentActivity(), urlBuilder.originUrl);
+                Log.e("RouteEventListener",urlBuilder.context+" "+urlBuilder.target);
             }
         });
         // set current Home id
