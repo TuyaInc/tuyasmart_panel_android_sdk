@@ -55,7 +55,7 @@ dependencies {
     implementation 'com.tuya.smart:tuyasmart:3.17.6'
     implementation 'com.squareup.okhttp3:okhttp-urlconnection:3.12.3'
 
-    implementation 'com.tuya.smart:panel-sdk:0.6.1'
+    implementation 'com.tuya.smart:panel-sdk:0.6.3'
 
     implementation 'com.weigan:loopView:0.1.1'
     implementation 'com.facebook.infer.annotation:infer-annotation:0.11.2'
