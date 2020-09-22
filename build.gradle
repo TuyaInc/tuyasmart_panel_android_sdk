@@ -12,10 +12,7 @@ buildscript {
 
 allprojects {
     repositories {
-        //***** required start ****//
-        maven { url 'https://maven-other.tuya.com/repository/maven-public/' }
         maven { url 'https://jitpack.io' }
-        //***** required end ****//
         google()
         jcenter()
     }
