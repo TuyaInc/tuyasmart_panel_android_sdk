@@ -4,7 +4,7 @@
 
 ## 最新版本
 
-0.6.3
+0.6.4
 
 
 # TuyaSmart Android Device Control BizBundle
@@ -13,7 +13,7 @@
 
 # Version
 
-0.6.3
+0.6.4
 
 
 
